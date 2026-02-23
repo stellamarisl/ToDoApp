@@ -1,0 +1,207 @@
+/* Variables para cambiar colores fácil */
+:root {
+    --primary: #6366f1; /* Violeta/Indigo */
+    --bg: #0f172a;      /* Fondo oscuro */
+    --card: #1e293b;    /* Color de las tarjetas */
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --danger: #ef4444;
+    --success: #10b981;
+}
+
+* { 
+    box-sizing: border-box; 
+    transition: all 0.2s ease; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedores Principales */
+.bienvenida, .pantalla {
+    width: 100%;
+    max-width: 450px;
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+.oculto{
+    display: none !important; /* Mantenemos esto para que no ocupe espacio */
+    opacity: 0;
+    pointer-events: none; /* Evita que se pueda clickear lo invisible */
+}
+
+
+/* Inputs y Botones */
+input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #334155;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px 20px;
+}
+
+/* Botón Principal */
+button[type="submit"], #borrarCompletadas {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1); }
+
+/* Filtros */
+#filtros {
+    display: flex;
+    gap: 8px;
+    margin: 1.5rem 0;
+}
+
+#filtros button {
+    flex: 1;
+    font-size: 0.8rem;
+    background: #334155;
+    color: var(--text-muted);
+}
+
+#filtros button:focus {
+    background: var(--primary);
+    color: white;
+}
+
+/* Lista de Tareas */
+ul { list-style: none; padding: 0; margin-top: 1.5rem; }
+
+li {
+    background: #334155;
+    margin-bottom: 0.75rem;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+li span { cursor: pointer; flex: 1; text-align: left; }
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+li button {
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+li button:hover {
+    color: var(--danger); 
+}
+
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    color: var(--text-muted); /* O un color gris suave */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-eliminar:hover {
+    color: var(--danger); /* Se pone rojo cuando se pasa el mouse */
+}
+
+.btn-eliminar-img{
+    width: 20px;
+    height: 20px;
+}
+
+.btn-eliminar:hover img {
+    transform: scale(1.2); 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#contador {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    body{
+        padding: 20px;
+    }
+    .bienvenida, .pantalla {
+        width: 95%;
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        /* En mobile, mejor que no esté en posición absolute para evitar errores de scroll */
+        position: relative; 
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 20px auto;
+    }
+
+    h1 { font-size: 1.6rem; }
+
+    #todoForm {
+        flex-direction: column; /* Input arriba, botón abajo */
+        gap: 8px;
+    }
+
+    #filtros {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
+        gap: 5px;
+    }
+
+    #filtros button {
+        font-size: 0.7rem;
+        padding: 10px 2px;
+    }
+
+    li {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>ToDo App</title>
+</head>
+<body>
+    <section id="bienvenidaO" class="bienvenida">
+        <h1>Mi ToDo App</h1>
+
+        <form id="loginForm">
+            <input 
+                type="text" 
+                id="nameInput" 
+                placeholder="Tu nombre"
+                required
+            />
+            <button type="submit">Entrar</button>
+        </form>
+
+    </section>
+    <section id="app" class="pantalla oculto">
+        <p id="saludo"></p>
+
+        <form id="todoForm">
+            <input 
+                type="text" 
+                id="todoInput" 
+                placeholder="Escribí una tarea..." 
+                required
+            />
+            <button type="submit">Agregar</button>
+        </form>
+    
+        <p id="contador"></p>
+    
+        <div id="filtros">
+            <button data-filtro="todas">Todas</button>
+            <button data-filtro="pendientes">Pendientes</button>
+            <button data-filtro="completadas">Completadas</button>
+        </div>
+        <button id="borrarCompletadas">Borrar completadas</button>
+    
+        <ul id="todoList"></ul> 
+
+    </section>
+
+    <script src="index.js"></script>
+    
+</body>
+</html>
