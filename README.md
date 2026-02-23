@@ -19,8 +19,8 @@ Una aplicación de lista de tareas (To-Do List) diseñada con un enfoque en la e
 
 ## 📱 Capturas de pantalla
 
-![Pantalla de login](img/ToDoApp.JPG)
 ![Pantalla principal](img/ToDoAppPrincipal.JPG)
+![Pantalla de login](img/ToDoApp.JPG)
 
 ## ✒️ Autor
 
