@@ -24,4 +24,4 @@ Una aplicación de lista de tareas (To-Do List) diseñada con un enfoque en la e
 
 ## ✒️ Autor
 
-[**Stella M. Loreto**](https://github.com/stellamarisl)
+[**Stella M. Loreto**](https://to-do-app-26.vercel.app)
